@@ -1,0 +1,12 @@
+import "reflect-metadata";
+export declare function factroyParameter(fn: Function): (target: any, methodName: string, paramsIndex: number) => void;
+export declare function getMothodParameter(instance: object, key: string): any;
+export declare const Ctx: () => (target: any, methodName: string, paramsIndex: number) => void;
+export declare const Req: () => (target: any, methodName: string, paramsIndex: number) => void;
+export declare const Res: () => (target: any, methodName: string, paramsIndex: number) => void;
+export declare const Query: (field?: any) => (target: any, methodName: string, paramsIndex: number) => void;
+export declare const Param: () => (target: any, methodName: string, paramsIndex: number) => void;
+export declare const Body: () => (target: any, methodName: string, paramsIndex: number) => void;
+export declare const Header: (field?: string) => (target: any, methodName: string, paramsIndex: number) => void;
+export declare const Next: () => (target: any, methodName: string, paramsIndex: number) => void;
+export declare const GetContext: (metaKey?: string | symbol, isClass?: boolean) => (target: any, methodName: string, paramsIndex: number) => void;

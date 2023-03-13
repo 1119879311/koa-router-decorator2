@@ -1,11 +1,11 @@
 {
   "name": "koa-router-decorator2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "koa-router-decorator2",
-  "main": "index.ts",
+  "main": "lib/index.js",
   "scripts": {
     "test": "npx ts-node ./test/index.ts",
-    "build":"set NODE_ENV=production&&tsc"
+    "build": "set NODE_ENV=production&&tsc --build tsconfig.pro.json"
   },
   "repository": {
     "type": "git",

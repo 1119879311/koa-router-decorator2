@@ -9,7 +9,7 @@ import {
     IGuard,
     Use,
     setMetadata,
-  } from "../../index";
+  } from "../../src/index";
   import Koa from "koa"
 
   // DTO

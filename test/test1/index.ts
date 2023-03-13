@@ -1,4 +1,4 @@
-import {ResigerRouter,} from "../../index";
+import {ResigerRouter,} from "../../src/index";
 import koaRouter from "koa-router";
 import Koa from "koa"
 import { setGolbalGuards, setGolbalMiddleware, UserController, Validation } from "./Controller";
