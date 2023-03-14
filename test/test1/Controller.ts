@@ -9,8 +9,10 @@ import {
     IGuard,
     Use,
     setMetadata,
+    Cookie,
   } from "../../src/index";
   import Koa from "koa"
+  import * as Cookies from 'cookies';
 
   // DTO
   class useDto{
@@ -96,6 +98,15 @@ import {
    
       console.log("路由层:getbefore","state:",ctx.state,"query:",query);
       return this.getd()
+    }
+    @GET("setCookies")
+    setCookies(@Cookie() cookie:Cookies,@Ctx() ctx: Koa.DefaultContext){
+      cookie.set("userInfo",JSON.stringify(ctx.state.useConfig ))
+       return "设置cokie"
+    }
+    @GET("getCookies")
+    getCookies(@Cookie() cookie:Cookies){
+       return cookie.get("userInfo") || {}
     }
     getd() {
       return "lallalla";

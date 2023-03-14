@@ -96,8 +96,10 @@ const rotuer = new koaRouter({
     IGuard,
     Use,
     setMetadata,
+    Cookie,
   } from "koa-router-decorator2";
   import Koa from "koa"
+   import * as Cookies from 'cookies';
 
   // DTO
   class useDto{
@@ -181,6 +183,16 @@ const rotuer = new koaRouter({
 
       console.log("路由层:getbefore","state:",ctx.state,"query:",query);
       return this.getd()
+    }
+
+    @GET("setCookies")
+    setCookies(@Cookie() cookie:Cookies,@Ctx() ctx: Koa.DefaultContext){
+      cookie.set("userInfo",JSON.stringify(ctx.state.useConfig ))
+      return "设置cokie"
+    }
+    @GET("getCookies")
+    getCookies(@Cookie() cookie:Cookies){
+       return cookie.get("userInfo") || {}
     }
     getd() {
       return "lallalla";

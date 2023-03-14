@@ -9,4 +9,6 @@ export declare const Param: () => (target: any, methodName: string, paramsIndex:
 export declare const Body: () => (target: any, methodName: string, paramsIndex: number) => void;
 export declare const Header: (field?: string) => (target: any, methodName: string, paramsIndex: number) => void;
 export declare const Next: () => (target: any, methodName: string, paramsIndex: number) => void;
+export declare const Cookie: () => (target: any, methodName: string, paramsIndex: number) => void;
+export declare const Session: () => (target: any, methodName: string, paramsIndex: number) => void;
 export declare const GetContext: (metaKey?: string | symbol, isClass?: boolean) => (target: any, methodName: string, paramsIndex: number) => void;

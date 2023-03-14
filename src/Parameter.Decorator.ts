@@ -2,7 +2,7 @@ import "reflect-metadata";
 import { PARAMS_META_KEY } from "./Constant";
 import type Koa from "koa";
 import { getContext } from "./Util";
-import url from "url"
+
 
 // 方法参数
 export function factroyParameter(fn: Function) {
@@ -33,6 +33,13 @@ export const Header = (field?: string) =>
   );
 
 export const Next = () => factroyParameter((_: Koa, next: Function) => next);
+
+export const Cookie = () =>
+  factroyParameter((ctx: Koa.DefaultContext) => ctx.cookies)
+
+
+export const Session = () =>
+  factroyParameter((ctx: Koa.DefaultContext) => ctx.session)
 
 // 获取当前类型方法的 元数据
 export const GetContext = (metaKey?: string | symbol, isClass?: boolean) =>

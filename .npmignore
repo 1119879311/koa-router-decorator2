@@ -4,3 +4,5 @@ src
 test
 .vscode
 package-lock.json
+tsconfig.json
+tsconfig.pro.json
